@@ -16,7 +16,6 @@ public class Config extends SimpleWebDispatcher {
 
 	@Override
 	public void config(SimpleWeb me) {
-		Engine.use().setDevMode(true);
 	}
 
 }
