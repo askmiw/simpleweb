@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>index.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+
+  </head>
+  
+  <body>
+    欢迎您,用户编号:#(user.id??'还没有值'),你的名字是:#(user.name??'还没有值')<br>
+    <img alt="" src="#(root)/index.png">
+    <hr>
+    <form action="#(root)/post" method="post">
+    	<input name="id" value="100">
+    	<input name="name" value="我是用户提交上来的" >
+    	<input type="submit" value="提交" >
+    </form>
+     <p>这里演示post数据,并以json格式返回</p>
+    <hr>
+    <form action="#(root)/postToIndex" method="post">
+    	<input name="id" value="101">
+    	<input name="name" value="我是用户提交上来的保存到session" >
+    	<input type="submit" value="提交" >
+    </form>
+    <p>在第一次点击之前,这里都没有值,之后点什么都会有值</p>
+    <div>提交结果:#(session['user'].name??'还没有值')</div>
+    <hr>
+    <a href="#(root)/fake4Index">跳转到首页</a>
+    <a href="#(root)/fake4Index2">重定向到首页</a>
+    <a href="#(root)/getParam?id=201">get参数</a>
+    <div>请求的参数获取:#(param['id']??'id参数没有值')</div>
+    <hr>
+    <form action="#(root)/upAndDown" method="post" enctype="multipart/form-data">
+    	<input name="id" value="301">
+    	<input name="name" value="这里只为了演示下载" >
+    	<input name="file" type="file">
+    	<input type="submit" value="提交" >
+    </form>
+    <p>这里提交的文件后台直接处理为下载,好像在eclipse内置浏览器不会下载??</p>
+  </body>
+</html>
